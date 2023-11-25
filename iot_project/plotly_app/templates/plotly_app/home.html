@@ -1,0 +1,26 @@
+<!-- your_app_name/templates/your_app_name/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio con Gráfica Plotly</title>
+    <!-- Agrega los enlaces necesarios para Plotly, por ejemplo, desde CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Contenedor para la gráfica -->
+    <div id="plotly-chart">
+        {{ plot|safe }}
+    </div>
+
+    <!-- Script para renderizar la gráfica -->
+    <script>
+        // Recupera la gráfica HTML del contexto y renderízala
+        var plotlyChart = document.getElementById('plotly-chart');
+        plotlyChart.innerHTML = '{{ plot|safe }}';
+    </script>
+</body>
+</html>
+
